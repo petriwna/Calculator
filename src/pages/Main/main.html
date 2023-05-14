@@ -4,16 +4,70 @@
   <meta charset='UTF-8'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n='main_title'></title>
-  <link href='https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,600&display=swap'
+  <link href='https://fontawesome.com/v5/icons/moon?f=classic&s=duotone&sc=%231E3050'
         rel='stylesheet'>
-  <link rel='preconnect' href='https://fonts.googleapis.com'>
-  <link rel='preconnect' href='https://fonts.gstatic.com' crossorigin>
-  <link
-    href='https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital@1&family=Caveat&family=Montserrat:wght@100;300&family=Nunito:wght@300&display=swap'
-    rel='stylesheet'>
+  <script src="https://kit.fontawesome.com/dab2adc775.js" crossorigin="anonymous"></script>
 </head>
 <body>
- <header class="header">Hello</header>
-<div id="container"></div>
+ <section class='container'>
+  <section class='container__heading'>
+    <span class='container__span'><i class='fas fa-bars'></i></span>
+    <span class='container__span'>Calculator</span>
+    <span class='container__span'>
+      <label for='changeTheme'>
+        <input type='checkbox' name='theme' id='changeTheme' value='light'>
+        <span class='container__btn'></span>
+        <i class='fas fa-moon'></i>
+      </label>
+    </span>
+  </section>
+
+   <section id='result' class='container__result'>
+     <section class='container__history'>
+       <p id='history-value' class='container__value'></p>
+     </section>
+     <section class='container__output'></section>
+   </section>
+
+   <section id='keyboard' class='container__keyboard'>
+     <section class='container__group'>
+       <section class='container__top-section'>
+         <button class='container__operator' id='clear'>C</button>
+         <button class='container__operator' id='backspace'>
+           <i class='fas fa-backspace'></i>
+         </button>
+         <button class='container__operator' id='%'>%</button>
+       </section>
+       <section class='container__middle-section'>
+         <section>
+           <button class='container__number' id='7'>7</button>
+           <button class='container__number' id='8'>8</button>
+           <button class='container__number' id='9'>9</button>
+         </section>
+         <section>
+           <button class='container__number' id='4'>4</button>
+           <button class='container__number' id='5'>5</button>
+           <button class='container__number' id='6'>6</button>
+         </section>
+         <section>
+           <button class='container__number' id='1'>1</button>
+           <button class='container__number' id='2'>2</button>
+           <button class='container__number' id='3'>3</button>
+         </section>
+         <section>
+           <button class='container__number' id='00'>00</button>
+           <button class='container__number' id='0'>0</button>
+         </section>
+       </section>
+     </section>
+     <section class='container__side-section'>
+       <button class='container__operator' id='/'>/</button>
+       <button class='container__operator' id='*'>&times</button>
+       <button class='container__operator' id='-'>-</button>
+       <button class='container__operator' id='+'>+</button>
+       <button class='container__operator equal' id='='>=</button></td>
+     </section>
+   </section>
+ </section>
 </body>
 </html>
