@@ -1,11 +1,15 @@
+/** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
-  moduleFileExtensions: ['js', 'json', 'ts'],
-  rootDir: 'src',
-  testRegex: '.*\\.spec\\.ts$',
+  preset: 'ts-jest',
+  testEnvironment: 'jsdom',
+  collectCoverage: true,
+  coveragePathIgnorePatterns: ['\\\\node_modules\\\\', '../../utils/styles/*.scss'],
+  // 'moduleNameMapper': {
+  //   '^.+.(css|styl|less|sass|scss|png|jpg|ttf|woff|woff2)$': 'jest-transform-stub',
+  // },
   transform: {
-    '^.+\\.(t|j)s$': 'ts-jest',
+    '^.+\\.ts?$': 'ts-jest',
+    '.(css|scss)$': '<rootDir>/src/jest-config/style-mock.ts',
   },
-  collectCoverageFrom: ['**/*.(t|j)s'],
-  coverageDirectory: '../coverage',
-  testEnvironment: 'node',
+  setupFiles: ['<rootDir>/src/jest-config/LocalStorageMock.ts'],
 };

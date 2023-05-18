@@ -1,14 +1,13 @@
-// import { setValueLocalStorage } from './utils';
+import { setValueLocalStorage } from './utils';
 
-export function changeTheme(id: string) {
-  const checkbox = <HTMLInputElement>document.getElementById(id);
-  console.log(checkbox);
-  if (checkbox?.checked) {
+export function changeTheme(event: { target: HTMLInputElement }) {
+  if (event.target.checked) {
+    document.body.classList.add('dark');
+
+    setValueLocalStorage('dark', 'theme');
+  } else {
     document.body.classList.remove('dark');
 
-    // setValueLocalStorage('theme', 'light');
-  } else {
-    // setValueLocalStorage('theme', 'dark');
-    document.body.classList.add('dark');
+    setValueLocalStorage('light', 'theme');
   }
 }

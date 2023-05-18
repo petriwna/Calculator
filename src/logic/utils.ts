@@ -7,6 +7,15 @@ export function addListener(id: string, eventType: string, callback: any) {
   return false;
 }
 
+export function getElementById(id: string): HTMLElement | null {
+  const node = document.getElementById(id);
+
+  if (node) {
+    return node;
+  }
+  return null;
+}
+
 export function getInputValue(id: string) {
   const input = <HTMLInputElement>document.getElementById(id);
   if (input) {
@@ -34,9 +43,10 @@ export function setNodeSelected(id: string, selectIndex: number) {
 }
 
 export function fromLocaleStorage(id: string, key: string, arrayValue: string[]) {
-  if (getValueLocalStorage(key)) {
-    // @ts-ignore
-    setNodeSelected(id, arrayValue.indexOf(getValueLocalStorage(key)));
+  const value = getValueLocalStorage(key) ?? '';
+  const index = arrayValue.indexOf(value);
+  if (index !== -1) {
+    setNodeSelected(id, index);
   } else {
     setValueLocalStorage(getInputValue(id), key);
   }
