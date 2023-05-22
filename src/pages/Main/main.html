@@ -27,47 +27,48 @@
        <p id='history-value' class='container__value'></p>
      </section>
      <section class='container__output'>
-       <p id="output-value"></p>
+       <p id="output-value">0</p>
      </section>
    </section>
 
-   <section id='keyboard' class='container__keyboard'>
+   <section class='container__keyboard'>
      <section class='container__group'>
        <section class='container__top-section'>
-         <button class='container__operator' id='clear'>C</button>
-         <button class='container__operator' id='backspace'>
+         <button class='container__operator' data-value='clear' data-type='operator'>C</button>
+         <button class='container__operator' data-value='backspace' data-type='operator'>
            <i class='fas fa-backspace'></i>
          </button>
-         <button class='container__operator' id='%'>%</button>
+         <button class='container__operator' data-value='%' data-type='operator'>%</button>
        </section>
        <section class='container__middle-section'>
          <section>
-           <button class='container__number' id='7'>7</button>
-           <button class='container__number' id='8'>8</button>
-           <button class='container__number' id='9'>9</button>
+           <button class='container__number' data-value='7' data-type='number'>7</button>
+           <button class='container__number' data-value='8' data-type='number'>8</button>
+           <button class='container__number' data-value='9' data-type='number'>9</button>
          </section>
          <section>
-           <button class='container__number' id='4'>4</button>
-           <button class='container__number' id='5'>5</button>
-           <button class='container__number' id='6'>6</button>
+           <button class='container__number' data-value='4' data-type='number'>4</button>
+           <button class='container__number' data-value='5' data-type='number'>5</button>
+           <button class='container__number' data-value='6' data-type='number'>6</button>
          </section>
          <section>
-           <button class='container__number' id='1'>1</button>
-           <button class='container__number' id='2'>2</button>
-           <button class='container__number' id='3'>3</button>
+           <button class='container__number' data-value='1' data-type='number'>1</button>
+           <button class='container__number' data-value='2' data-type='number'>2</button>
+           <button class='container__number' data-value='3' data-type='number'>3</button>
          </section>
          <section>
-           <button class='container__number' id='00'>00</button>
-           <button class='container__number' id='0'>0</button>
+           <button class='container__number' data-value='00' data-type='number'>00</button>
+           <button class='container__number' data-value='0' data-type='number'>0</button>
+           <button class='container__number' data-value='.' data-type='operator'>.</button>
          </section>
        </section>
      </section>
      <section class='container__side-section'>
-       <button class='container__operator' id='/'>/</button>
-       <button class='container__operator' id='*'>&times</button>
-       <button class='container__operator' id='-'>-</button>
-       <button class='container__operator' id='+'>+</button>
-       <button class='container__operator equal' id='='>=</button></td>
+       <button class='container__operator' data-value='/' data-type='operator'>/</button>
+       <button class='container__operator' data-value='*' data-type='operator'>&times;</button>
+       <button class='container__operator' data-value='-' data-type='operator'>-</button>
+       <button class='container__operator' data-value='+' data-type='operator'>+</button>
+       <button class='container__operator equal' data-value='=' data-type='operator'>=</button>
      </section>
    </section>
  </section>
