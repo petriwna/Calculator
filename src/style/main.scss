@@ -76,6 +76,12 @@ body{
      }
   }
 
+  &__open {
+    cursor: pointer;
+    background-color: var(--bg);
+    border: none;
+  }
+
   &__result {
     height: 30%;
     position: relative;
@@ -201,6 +207,17 @@ body{
 .fas{
   cursor: pointer;
 }
+
+.material-symbols-outlined {
+  color: var(--color-orange);
+  margin: 5px;
+  font-variation-settings:
+          'FILL' 1,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 48
+}
+
 label input[type="checkbox"]{
   -webkit-appearance: none;
 }

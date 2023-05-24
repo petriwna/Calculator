@@ -4,14 +4,17 @@
   <meta charset='UTF-8'>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title data-i18n='main_title'></title>
-  <link href='https://fontawesome.com/v5/icons/moon?f=classic&s=duotone&sc=%231E3050'
-        rel='stylesheet'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
   <script src="https://kit.fontawesome.com/dab2adc775.js" crossorigin="anonymous"></script>
 </head>
 <body>
  <section class='container'>
   <section class='container__heading'>
-    <span class='container__span'><i class='fas fa-bars'></i></span>
+    <button class='container__open' data-type='action'>
+      <span class="material-symbols-outlined">
+        right_panel_open
+      </span>
+    </button>
     <span class='container__span'>Calculator</span>
     <span class='container__span'>
       <label for='changeTheme'>
@@ -38,7 +41,8 @@
          <button class='container__operator' data-value='backspace' data-type='operator'>
            <i class='fas fa-backspace'></i>
          </button>
-         <button class='container__operator' data-value='%' data-type='operator'>%</button>
+         <button class='container__operator' data-value='+/-' data-type='operator'>+/-
+         </button>
        </section>
        <section class='container__middle-section'>
          <section>
@@ -57,7 +61,6 @@
            <button class='container__number' data-value='3' data-type='number'>3</button>
          </section>
          <section>
-           <button class='container__number' data-value='00' data-type='number'>00</button>
            <button class='container__number' data-value='0' data-type='number'>0</button>
            <button class='container__number' data-value='.' data-type='operator'>.</button>
          </section>
