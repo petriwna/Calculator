@@ -5,7 +5,7 @@ export class Calculation implements ICalculation {
     return firstOperand + secondOperand;
   }
 
-  divide(firstOperand: number, secondOperand: number): number {
+  subtract(firstOperand: number, secondOperand: number): number {
     return firstOperand - secondOperand;
   }
 
@@ -17,7 +17,7 @@ export class Calculation implements ICalculation {
     return firstOperand * secondOperand;
   }
 
-  subtract(firstOperand: number, secondOperand: number): number {
+  divide(firstOperand: number, secondOperand: number): number {
     return firstOperand / secondOperand;
   }
 }

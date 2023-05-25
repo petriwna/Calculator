@@ -68,7 +68,7 @@ export class Calculator implements ICalculator {
       return;
     }
 
-    if (this.firstOperand === null && !isNaN(inputValue)) {
+    if (this.firstOperand === 0 && !isNaN(inputValue)) {
       this.firstOperand = inputValue;
     } else if (this.operator) {
       const result = this.compute(this.firstOperand, inputValue, this.operator);
@@ -87,11 +87,11 @@ export class Calculator implements ICalculator {
       case '+':
         return calculation.add(firstOperand, secondOperand);
       case '-':
-        return calculation.divide(firstOperand, secondOperand);
+        return calculation.subtract(firstOperand, secondOperand);
       case '*':
         return calculation.multiply(firstOperand, secondOperand);
       case '/':
-        return calculation.subtract(firstOperand, secondOperand);
+        return calculation.divide(firstOperand, secondOperand);
       default:
         return secondOperand;
     }

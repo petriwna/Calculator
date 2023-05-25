@@ -5,9 +5,8 @@ import {
   getInputValue,
   getValueLocalStorage,
   setNodeSelected,
-  // setNodeSelected,
   setValueLocalStorage,
-} from '../logic/utils';
+} from '../utils';
 
 describe('addListener', () => {
   test('addListener', () => {
@@ -50,6 +49,10 @@ describe('getInputValue', () => {
 });
 
 describe('setNodeSelected', () => {
+  afterEach(() => {
+    jest.clearAllMocks();
+  });
+
   const id = 'mock-id';
   const mockElement = document.createElement('input');
   mockElement.setAttribute('type', 'checkbox');
@@ -61,7 +64,6 @@ describe('setNodeSelected', () => {
     expect(mockElement.checked).toBe(false);
   });
   test('setNodeSelected true', () => {
-    // global.document.getElementById = jest.fn(() => <HTMLElement>(<unknown>{ selectedIndex: 1 }));
     setNodeSelected(id, 1);
     expect(mockElement.checked).toBe(true);
   });
@@ -74,25 +76,23 @@ describe('setValueLocalStorage', () => {
 });
 
 describe('getValueLocalStorage', () => {
-  test('returns value from localStorage when key exists', () => {
-    const mockValue = 'hello';
-    const mockStorage = {
-      getItem: jest.fn().mockReturnValue(mockValue),
-    };
-    Object.defineProperty(window, 'localStorage', {
-      value: mockStorage,
-    });
-    const result = getValueLocalStorage('key');
-    expect(result).toEqual(mockValue);
-  });
-
-  test('returns empty string when key is empty', () => {
+  test('getValueLocalStorage', () => {
     expect(getValueLocalStorage('')).toBe('');
+  });
+  test('getValueLocalStorage true', () => {
+    const hasOwnPropertySpy = jest.spyOn(Object.prototype, 'hasOwnProperty');
+    hasOwnPropertySpy.mockReturnValue(true);
+    jest.spyOn(localStorage, 'getItem').mockReturnValue('hello');
+
+    expect(getValueLocalStorage('key')).toEqual('hello');
+
+    hasOwnPropertySpy.mockRestore();
+    jest.restoreAllMocks();
   });
 });
 
-describe('fromLocaleStorageToDropDown', () => {
-  test('fromLocaleStorageToDropDown', () => {
+describe('fromLocaleStorage', () => {
+  test('fromLocaleStorage', () => {
     expect(fromLocaleStorage('', '', [])).toBeUndefined();
   });
   test('fromLocaleStorageToDropDown true', () => {

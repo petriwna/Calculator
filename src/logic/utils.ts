@@ -24,7 +24,7 @@ export function getInputValue(id: string) {
   return '';
 }
 
-export function setValueLocalStorage(value: any, key: any) {
+export function setValueLocalStorage(value: string, key: string): void {
   localStorage.setItem(key, value);
 }
 
